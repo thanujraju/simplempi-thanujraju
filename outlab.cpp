@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
 
 void print_enemy(struct enemy e) {
      //cout << "Count: " << e.count << endl;
-  cout<<"lkjljls";
+  // cout<<"lkjljls";
      for (int i = 0; i < e.count; i++) {
 	  cout << "Loc " << i << ' ';
 	  for (int j = 0; j < 3; j++) {
