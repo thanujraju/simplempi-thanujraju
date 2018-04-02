@@ -38,13 +38,13 @@ MPI_Datatype get_custom_type(int num_enemy) {
 		//MPI_Address(ds,&base);
 		MPI_Aint displacements[8];
 		displacements[0] = &ds.count-&ds;
-		displacements[1] = &ds.location-base;
-		displacements[2] = &ds.type-base;
-		displacements[3] = &ds.experience-base;
-		displacements[4] = &ds.strength-base;
-		displacements[5] = &ds.supplies-base;
-		displacements[6] = &ds.fuel-base;
-		displacements[7] = &ds.stance-base;
+		displacements[1] = &ds.location-&ds;
+		displacements[2] = &ds.type-&ds;
+		displacements[3] = &ds.experience-&ds;
+		displacements[4] = &ds.strength-&ds;
+		displacements[5] = &ds.supplies-&ds;
+		displacements[6] = &ds.fuel-&ds;
+		displacements[7] = &ds.stance-&ds;
 MPI_Type_create_struct(8,len,displacements,type,&retValue);
 MPI_Type_commit(&retValue);
 
