@@ -7,17 +7,17 @@ using namespace std;
 void get_arr_type(MPI_Datatype &typeof_2d)
 {
 	int cols[20] ;
-	int 2d_arr[20];
+	int arr_2d[20];
 	for(int i = 0 ; i < 20 ;i++)
 	{
 		cols[i] = 3;
 	}
 	MPI_Aint base;
-	MPI_Address(2d_arr[0],&base);
+	MPI_Address(arr_2d[0],&base);
 	MPI_Aint displacements[20];
 	for(int i = 0 ; i < 20 ;i++)
 	{
-		MPI_Address(2d_arr[i],&displacements[i]);
+		MPI_Address(arr_2d[i],&displacements[i]);
 		displacements[i] -= base;
 	}
 	MPI_Type_hindexed(20,cols,displacements,MPI_INT,&typeof_2d);
