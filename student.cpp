@@ -7,7 +7,7 @@ using namespace std;
 void get_arr_type(MPI_Datatype &typeof_2d)
 {
 	int cols[20] ;
-	int arr_2d[20];
+	int *arr_2d[20];
 	for(int i = 0 ; i < 20 ;i++)
 	{
 		cols[i] = 3;
