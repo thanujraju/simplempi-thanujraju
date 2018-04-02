@@ -33,7 +33,7 @@ MPI_Datatype get_custom_type(int num_enemy) {
 	 MPI_Datatype type[8]; 
 	 MPI_Datatype typeof_2d;
 	 get_arr_type(typeof_2d);
-	 type = {MPI_INT, typeof_2d ,MPI_CHAR,MPI_DOUBLE,MPI_DOUBLE,MPI_INT,MPI_DOUBLE,MPI_INT};
+	 type = &{MPI_INT, typeof_2d ,MPI_CHAR,MPI_DOUBLE,MPI_DOUBLE,MPI_INT,MPI_DOUBLE,MPI_INT};
 	 int len[8] = {1,1,20,1,1,1,1,1};
 	 MPI_Aint base;
 		MPI_Address(ds,&base);
