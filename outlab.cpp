@@ -22,7 +22,8 @@ int main(int argc, char *argv[]) {
   if (rank == 0) {
     for (int g = 0; g < num_enemy; g++) {
       e[g] = get_enemy();
-#ifdef DEBUG      
+#ifdef DEBUG  
+  cout<<"lol";    
       print_enemy(e[g]);
 #endif
     }
