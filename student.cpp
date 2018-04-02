@@ -37,7 +37,9 @@ MPI_Datatype get_custom_type(int num_enemy) {
 	 MPI_Aint base;
 		MPI_Address(&ds,&base);
 		MPI_Aint displacements[8];
-		displacements[0] = &ds.count-base;
+		MPI_Address(&ds.count,&displacements[i]);
+
+		displacements[0] -= base;
 		displacements[1] = &ds.location-&ds;
 		displacements[2] = &ds.type-&ds;
 		displacements[3] = &ds.experience-&ds;
