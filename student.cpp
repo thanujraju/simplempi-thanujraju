@@ -34,10 +34,10 @@ MPI_Datatype get_custom_type(int num_enemy) {
 	 get_arr_type(typeof_2d);
 	 MPI_Datatype type[8] = {MPI_INT, typeof_2d ,MPI_CHAR,MPI_DOUBLE,MPI_DOUBLE,MPI_INT,MPI_DOUBLE,MPI_INT};
 	 int len[8] = {1,1,20,1,1,1,1,1};
-	 MPI_Aint base;
-		MPI_Address(ds,&base);
+	 //MPI_Aint base;
+		//MPI_Address(ds,&base);
 		MPI_Aint displacements[8];
-		displacements[0] = &ds.count-base;
+		displacements[0] = &ds.count-&ds;
 		displacements[1] = &ds.location-base;
 		displacements[2] = &ds.type-base;
 		displacements[3] = &ds.experience-base;
