@@ -4,7 +4,7 @@
 #include <mpi.h>
 #include "data.hpp"
 using namespace std;
-void get_arr_type(MPI_Datatype &2d_type)
+void get_arr_type(MPI_Datatype &typeof_2d)
 {
 	int cols[20] ;
 	int 2d_arr[20];
@@ -20,8 +20,8 @@ void get_arr_type(MPI_Datatype &2d_type)
 		MPI_Address(2d_arr[i],&displacements[i]);
 		displacements[i] -= base;
 	}
-	MPI_Type_hindexed(20,cols,displacements,MPI_INT,&2d_type);
-	MPI_Type_commit(&2d_type);
+	MPI_Type_hindexed(20,cols,displacements,MPI_INT,&typeof_2d);
+	MPI_Type_commit(&typeof_2d);
 }
 MPI_Datatype get_custom_type(int num_enemy) {
 	 MPI_Datatype retValue;
@@ -31,9 +31,9 @@ MPI_Datatype get_custom_type(int num_enemy) {
 	 /////////////
 	 struct enemy ds;
 	 MPI_Datatype type[8]; 
-	 MPI_Datatype 2d_type;
-	 get_arr_type(2d_type);
-	 type = {MPI_INT, 2d_type ,MPI_CHAR,MPI_DOUBLE,MPI_DOUBLE,MPI_INT,MPI_DOUBLE,MPI_INT};
+	 MPI_Datatype typeof_2d;
+	 get_arr_type(typeof_2d);
+	 type = {MPI_INT, typeof_2d ,MPI_CHAR,MPI_DOUBLE,MPI_DOUBLE,MPI_INT,MPI_DOUBLE,MPI_INT};
 	 int len[8] = {1,1,20,1,1,1,1,1};
 	 MPI_Aint base;
 		MPI_Address(ds,&base);
