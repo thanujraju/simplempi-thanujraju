@@ -49,7 +49,7 @@ MPI_Datatype get_custom_type(int num_enemy) {
 	  */
 	 /////////////
 	 struct enemy ds;
-	 MPI_Datatype typeof_2d;
+	 MPI_Datatype typeof_2d,enemy_type;
 	 //get_arr_type(typeof_2d);
 	 MPI_Type_contiguous(3,MPI_INT,&typeof_2d);
 		MPI_Type_commit(&typeof_2d);
@@ -82,8 +82,8 @@ MPI_Datatype get_custom_type(int num_enemy) {
 		MPI_Address(&ds.stance,&displacements[7]);
 		displacements[7] -= base;
 
-MPI_Type_create_struct(8,len,displacements,type,&retValue);
-MPI_Type_commit(&retValue);
+MPI_Type_create_struct(8,len,displacements,type,&enemy_type);
+MPI_Type_commit(&enemy_type);
 
 
 
