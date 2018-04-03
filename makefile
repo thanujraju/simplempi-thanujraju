@@ -1,2 +1,2 @@
 all:
-	mpic++ -DDEBUG -g -Wall -o mpi_outlab outlab.cpp student.cpp 
+	mpic++ -std=c++11 -o mpi_outlab outlab.cpp student.cpp 

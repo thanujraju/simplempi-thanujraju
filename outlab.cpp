@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <mpi.h>
+#include <string> 
 #include "data.hpp"
 using namespace std;
 void print_enemy(struct enemy e);  // for debug 
@@ -23,11 +24,12 @@ int main(int argc, char *argv[]) {
     for (int g = 0; g < num_enemy; g++) {
       e[g] = get_enemy();
 #ifdef DEBUG  
-  cout<<"lol";    
+  // cout<<"lol";    
       print_enemy(e[g]);
 #endif
     }
-    MPI_Send(&e, 1, custom_type, 1, 0, MPI_COMM_WORLD);
+    // cout<<std::to_string(custom_type)<<endl;
+   MPI_Send(&e, 1, custom_type, 1, 0, MPI_COMM_WORLD);
   }
   if (rank == 1) {
     MPI_Recv(&e, 1, custom_type, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
