@@ -84,8 +84,8 @@ MPI_Datatype get_custom_type(int num_enemy) {
 
 	MPI_Type_create_struct(8,len,displacements,type,&struct_type);
 	MPI_Type_commit(&struct_type);
-	MPI_Type_contiguous(num_enemy,struct_type,&retValue);
-	MPI_Type_commit(&retValue);
+	// MPI_Type_contiguous(num_enemy,struct_type,&retValue);
+	// MPI_Type_commit(&retValue);
 
 
 
