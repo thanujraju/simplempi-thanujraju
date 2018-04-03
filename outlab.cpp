@@ -43,21 +43,21 @@ int main(int argc, char *argv[]) {
 }
 
 void print_enemy(struct enemy e) {
-     //cout << "Count: " << e.count << endl;
+     cout << "Count: " << e.count << endl;
   // cout<<"lkjljls";
-     for (int i = 0; i < e.count; i++) {
-	  cout << "Loc " << i << ' ';
-	  for (int j = 0; j < 3; j++) {
-	       cout << e.location[i][j] << ' ';
-	  }
+   //   for (int i = 0; i < e.count; i++) {
+	  // cout << "Loc " << i << ' ';
+	  // for (int j = 0; j < 3; j++) {
+	  //      cout << e.location[i][j] << ' ';
+	  // }
 
-	  cout << " Type " << e.type[i] << endl;
-     }
-     cout << "Experience: " << e.experience << endl;
-     cout << "Strength: " << e.strength << endl;
-     cout << "Supplies: " << e.supplies << endl;
-     cout << "Fuel: " << e.fuel << endl;
-     cout << "Stance:" << e.stance << endl;
+	  // cout << " Type " << e.type[i] << endl;
+   //   }
+   //   cout << "Experience: " << e.experience << endl;
+   //   cout << "Strength: " << e.strength << endl;
+   //   cout << "Supplies: " << e.supplies << endl;
+   //   cout << "Fuel: " << e.fuel << endl;
+   //   cout << "Stance:" << e.stance << endl;
 
 }
 
